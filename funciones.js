@@ -71,6 +71,37 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//codigo nuevo barra de busqueda
+
+$(document).ready(function() {
+    $('#searchForm').submit(function(event) {
+        event.preventDefault();
+
+        var searchTerm = $(this).find('input').val().trim().toLowerCase(); 
+
+
+        var services = {
+            'carrito': 'carrito.html',
+            'catalogo': 'catalogo.html',
+            'contacto': 'contacto.html',
+            'menu': 'index.html',
+            'noticias': 'noticias.html',
+            'proyecto': 'proyecto1.html'
+
+        };
+
+
+        if (services[searchTerm]) {
+            window.location.href = services[searchTerm]; 
+        } else {
+            alert('Servicio no encontrado'); 
+        }
+    });
+});
+      
+
+//Codigo nuevo barra de busqueda
+
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
